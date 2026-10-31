@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: oklch(0.969 0 0);
+  --color-surface: oklch(1 0 0);
+  --color-surface-2: oklch(0.985 0 0);
+  --color-line: oklch(0.906 0 0);
+  --color-line-strong: oklch(0.8 0 0);
+  --color-ink: oklch(0.178 0 0);
+  --color-muted: oklch(0.452 0 0);
+  --color-amber: oklch(0.72 0.16 65);
+  --color-amber-soft: oklch(0.96 0.05 80);
+  --color-amber-ink: oklch(0.32 0.08 55);
+  --color-good: oklch(0.45 0.12 150);
+  --color-good-soft: oklch(0.96 0.04 150);
+  --color-bad: oklch(0.45 0.18 27);
+  --color-bad-soft: oklch(0.97 0.025 27);
+  --font-sans: var(--font-geist), "Avenir Next", "Segoe UI", "Helvetica Neue", system-ui, sans-serif;
+  --radius-card: 18px;
+  --radius-control: 13px;
+  --shadow-soft: 0 24px 70px oklch(0.18 0 0 / 0.1);
+}
+
+html {
+  background: oklch(0.969 0 0);
+  color: oklch(0.178 0 0);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid oklch(0.72 0.16 65);
+  outline-offset: 2px;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes mic-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@keyframes speak-bar {
+  0%,
+  100% {
+    transform: scaleY(0.45);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes think-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rise-in {
+  animation: rise-in 260ms ease-out;
+}
+
+.mic-ring {
+  animation: mic-pulse 1.4s ease-out infinite;
+}
+
+.think-ring {
+  animation: think-spin 2.4s linear infinite;
+}
+
+.speak-bar {
+  transform-origin: center bottom;
+  animation: speak-bar 0.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in,
+  .mic-ring,
+  .think-ring,
+  .speak-bar {
+    animation: none;
+  }
+}
+/* v2 */

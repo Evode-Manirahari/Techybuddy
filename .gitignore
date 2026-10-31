@@ -1,0 +1,8 @@
+node_modules
+.next
+.env
+.env.local
+.durable-actors
+*.tsbuildinfo
+actor-dist
+.agentworkforce

@@ -1,0 +1,33 @@
+{
+  "name": "techybuddy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "typecheck": "tsc --noEmit",
+    "actors": "durable-actors dev",
+    "actors:generate": "durable-actors generate",
+    "compile:actor": "tsc -p tsconfig.actor.json",
+    "predev": "npm run compile:actor",
+    "prebuild": "npm run compile:actor"
+  },
+  "dependencies": {
+    "@openai/agents": "0.21.0",
+    "durable-actors": "0.14.6",
+    "next": "16.4.3",
+    "openai": "7.47.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.1.11",
+    "@types/node": "22.15.30",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "bun": "1.4.2",
+    "tailwindcss": "4.1.11",
+    "typescript": "5.9.3"
+  }
+}
